@@ -1,0 +1,27 @@
+<mat-card appearance="filled">
+    <mat-card-content>
+        <form style="display:grid">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email address</mat-label>
+                <input matInput placeholder="Enter your email address" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Enter your username" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enter your password" />
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Register</button>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        
+        <button (click)="this.goToLogin()" mat-button color="primary">Have an account?</button>
+    </mat-card-actions>
+</mat-card>

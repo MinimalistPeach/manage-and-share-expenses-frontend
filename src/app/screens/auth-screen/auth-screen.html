@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="middle-text">
+        <h1 class="welcome-text">Welcome to MASE</h1>
+    </div>
+    <div class="middle">
+        @switch (this.getAuthMode()) {
+          @case ('register') {
+            <register></register>
+          }
+          @default {
+            <login></login>
+          }
+        }
+    </div>
+</div>
