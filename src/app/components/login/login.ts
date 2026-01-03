@@ -27,12 +27,22 @@ import { Form } from '../../services/form';
 })
 export class Login {
 
-  constructor(private readonly _authScreenService: AuthScreenService,) { }
+  constructor(private readonly _authScreenService: AuthScreenService,
+    private readonly _authService: Auth,
+    private readonly _formService: Form
+  ) { }
 
   public goToRegister(): void {
     this._authScreenService.goToRegister();
   }
 
+  public login() {
+    const { email, password } = this._formService.loginForm.value;
+    this._authService.login(email ?? '', password ?? '');
+  }
 
+  public get formService(): Form {
+    return this._formService;
+  }
 
 }

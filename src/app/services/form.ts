@@ -12,8 +12,21 @@ export class Form {
     password: new FormControl(''),
   });
 
+  private readonly _loginForm: FormGroup = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+
   public resetRegisterForm(): void {
     this._registerForm.reset();
+  }
+
+  public resetLoginForm(): void {
+    this._loginForm.reset();
+  }
+
+  public get loginForm(): FormGroup {
+    return this._loginForm;
   }
 
   public get registerForm(): FormGroup {

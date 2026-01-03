@@ -30,7 +30,6 @@ export class Register {
   constructor(private readonly _authScreenService: AuthScreenService,
     private readonly _authService: Auth,
     private readonly _formService: Form,
-    private readonly _toastService: ToastService
   ) { }
 
   public goToLogin(): void {
@@ -39,7 +38,6 @@ export class Register {
 
   public register() {
     const { username, email, password } = this._formService.registerForm.value;
-    console.log(username, email, password)
     this._authService.register(username ?? '', email ?? '', password ?? '');
   }
 
