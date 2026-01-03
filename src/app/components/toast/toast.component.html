@@ -1,0 +1,11 @@
+<div class="toast-container">
+  <div *ngFor="let toast of toasts" class="toast toast-{{toast.type}}" [ngClass]="{'fade-in': true, 'fade-out': toast.fadeOut}">
+    <div class="toast-header">
+      <strong class="toast-title">{{toast.title}}</strong>
+      <button class="close-btn" (click)="removeToast(toast.id)">&times;</button>
+    </div>
+    <div class="toast-body">
+      {{toast.message}}
+    </div>
+  </div>
+</div>
