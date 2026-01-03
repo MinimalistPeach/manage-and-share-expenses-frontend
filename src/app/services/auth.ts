@@ -30,7 +30,7 @@ export class Auth {
     this._httpClient.post<AuthResponse>(`${environment.apiUrl}auth/login`, {
       email,
       password,
-    }).subscribe({
+    }, { withCredentials: true }).subscribe({
       next: (response) => {
         // TODO: MAIN PAGE
       },
