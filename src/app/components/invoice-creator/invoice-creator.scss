@@ -1,4 +1,14 @@
-// Container for the two-column layout
+.add-item-label {
+	font-size: 0.85rem;
+	font-weight: 400;
+}
+.item-row {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 5px;
+}
 .invoice-creator-container {
 	display: flex;
 	justify-content: center;
@@ -23,9 +33,13 @@
 }
 
 .input-field {
-	display: block;
-	width: 100%;
-	margin-bottom: 20px;
+	display: flex;
+	width: auto;
+	margin-bottom: 0;
+}
+
+.item-row button[mat-icon-button][aria-label="Delete"] {
+	margin-left: 12px;
 }
 
 .upload-drop-area {
@@ -45,4 +59,19 @@
 	font-size: 48px;
 	color: #1976d2;
 	margin-bottom: 8px;
+}
+
+#deleteButton {
+    transition: color 0.5s;
+}
+#deleteButton:hover {
+    color: red;
+}
+
+#addButton {
+    transition: color 0.5s;
+}
+
+#addButton:hover {
+    color: green;
 }

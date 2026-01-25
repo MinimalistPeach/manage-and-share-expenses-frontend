@@ -1,26 +1,61 @@
 <div class="invoice-creator-container">
-	<div class="left-panel">
-		<h2>Invoice Details</h2>
-		<mat-form-field appearance="fill" class="input-field">
-			<mat-label>Invoice Number</mat-label>
-			<input matInput placeholder="Enter invoice number">
-		</mat-form-field>
-		<mat-form-field appearance="fill" class="input-field">
-			<mat-label>Date</mat-label>
-			<input matInput type="date">
-		</mat-form-field>
-		<mat-form-field appearance="fill" class="input-field">
-			<mat-label>Customer Name</mat-label>
-			<input matInput placeholder="Enter customer name">
-		</mat-form-field>
-	</div>
-	<div class="divider"></div>
-	<div class="right-panel">
-		<h2>Upload Files</h2>
-		<div class="upload-drop-area" (drop)="$event.preventDefault()" (dragover)="$event.preventDefault()">
-			<mat-icon>cloud_upload</mat-icon>
-			<p>Drag & drop files here or click to upload</p>
-			<input type="file" multiple hidden>
-		</div>
-	</div>
+    <div class="left-panel">
+        <h2>Invoice Details</h2>
+        <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Store name</mat-label>
+                    <input matInput placeholder="Enter store name">
+                </mat-form-field></mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Date</mat-label>
+                    <input matInput type="date">
+                </mat-form-field></mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Customer Name</mat-label>
+                    <input matInput placeholder="Enter customer name">
+                </mat-form-field></mat-grid-tile>
+        </mat-grid-list>
+
+        <h3>Items</h3>
+        <button mat-icon-button aria-label="AddItem" (click)="addInvoiceItem()" id="addButton" class="add-item-btn">
+            <mat-icon>add_shopping_cart</mat-icon>
+            <span class="add-item-label">Add item</span>
+        </button>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Added items: {{getInvoiceItemsCount()}} </mat-panel-title>
+            </mat-expansion-panel-header>
+            @for(invoiceItem of invoiceItems; track invoiceItem.id) {
+            <div class="item-row">
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Item #{{invoiceItem.id}} name</mat-label>
+                    <input matInput placeholder="Enter item name">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Item #{{invoiceItem.id}} price</mat-label>
+                    <input matInput type="number" placeholder="Enter item price">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-field">
+                    <mat-label>Item #{{invoiceItem.id}} quantity</mat-label>
+                    <input matInput type="number" placeholder="Enter item quantity">
+                </mat-form-field>
+                <button mat-icon-button aria-label="Delete" id="deleteButton">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            }
+        </mat-expansion-panel>
+    </div>
+    <div class="divider"></div>
+    <div class="right-panel">
+        <h2>Upload Files</h2>
+        <div class="upload-drop-area" (drop)="$event.preventDefault()" (dragover)="$event.preventDefault()">
+            <mat-icon>cloud_upload</mat-icon>
+            <p>Drag & drop files here or click to upload</p>
+            <input type="file" hidden>
+        </div>
+    </div>
 </div>
