@@ -1,1 +1,26 @@
-<p>invoice-creator works!</p>
+<div class="invoice-creator-container">
+	<div class="left-panel">
+		<h2>Invoice Details</h2>
+		<mat-form-field appearance="fill" class="input-field">
+			<mat-label>Invoice Number</mat-label>
+			<input matInput placeholder="Enter invoice number">
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="input-field">
+			<mat-label>Date</mat-label>
+			<input matInput type="date">
+		</mat-form-field>
+		<mat-form-field appearance="fill" class="input-field">
+			<mat-label>Customer Name</mat-label>
+			<input matInput placeholder="Enter customer name">
+		</mat-form-field>
+	</div>
+	<div class="divider"></div>
+	<div class="right-panel">
+		<h2>Upload Files</h2>
+		<div class="upload-drop-area" (drop)="$event.preventDefault()" (dragover)="$event.preventDefault()">
+			<mat-icon>cloud_upload</mat-icon>
+			<p>Drag & drop files here or click to upload</p>
+			<input type="file" multiple hidden>
+		</div>
+	</div>
+</div>
