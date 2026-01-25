@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { TokenCheckerService } from './services/token-checker.service';
 
 @Injectable({
@@ -7,10 +7,13 @@ import { TokenCheckerService } from './services/token-checker.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private tokenChecker: TokenCheckerService) {}
+  constructor(private tokenChecker: TokenCheckerService, private _router: Router) {}
 
   canActivate(): boolean {
-    console.log(this.tokenChecker.isAuthenticated())
+    if (!this.tokenChecker.isAuthenticated()) {
+      this._router.navigate(['/auth']);
+      return false;
+    }
     return this.tokenChecker.isAuthenticated();
   }
 }

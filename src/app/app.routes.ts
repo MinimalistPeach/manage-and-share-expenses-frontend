@@ -6,8 +6,11 @@ export const routes: Routes = [
 
     {
         path: '', children: [
-            { path: 'create-expense', loadComponent: () => import('./screens/create-invoice/create-invoice').then(m => m.CreateInvoice), canActivate: [AuthGuard] },
+            { path: 'create-expense', loadComponent: () => import('./screens/create-invoice/create-invoice').then(m => m.CreateInvoice) },
 
-        ]
+        ],
+        loadComponent: () => import('./components/app-base/app-base').then(m => m.AppBase),
+        canActivate: [AuthGuard]
     },
+    { path: '**', redirectTo: 'create-expense' }
 ];
