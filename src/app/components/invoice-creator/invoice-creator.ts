@@ -34,4 +34,8 @@ export class InvoiceCreator {
   public getInvoiceItemsCount() {
     return this._invoiceCreatorService.getInvoiceLength();
   }
+
+  public deleteInvoiceItem(id: number) {
+    this._invoiceCreatorService.deleteInvoiceItem(id);
+  }
 }

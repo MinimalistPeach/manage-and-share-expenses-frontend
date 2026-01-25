@@ -42,7 +42,7 @@
                     <mat-label>Item #{{invoiceItem.id}} quantity</mat-label>
                     <input matInput type="number" placeholder="Enter item quantity">
                 </mat-form-field>
-                <button mat-icon-button aria-label="Delete" id="deleteButton">
+                <button mat-icon-button aria-label="Delete" id="deleteButton" (click)="deleteInvoiceItem(invoiceItem.id)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>

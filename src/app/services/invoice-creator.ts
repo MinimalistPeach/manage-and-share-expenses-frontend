@@ -10,6 +10,10 @@ export class InvoiceCreatorService {
 
   private _invoiceItems: InvoiceItem[] = [];
 
+  public deleteInvoiceItem(id: number): void {
+    this._invoiceItems = this._invoiceItems.filter(item => item.id !== id);
+  }
+
 
   public get invoiceItems(): InvoiceItem[] {
     return this._invoiceItems;
