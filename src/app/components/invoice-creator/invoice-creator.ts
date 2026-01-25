@@ -20,7 +20,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './invoice-creator.scss',
 })
 export class InvoiceCreator {
-
   constructor(private readonly _invoiceCreatorService: InvoiceCreatorService) { }
 
   public get invoiceItems() {
@@ -37,5 +36,27 @@ export class InvoiceCreator {
 
   public deleteInvoiceItem(id: number) {
     this._invoiceCreatorService.deleteInvoiceItem(id);
+  }
+
+  onDropZoneClick(): void {
+    const fileInput = document.querySelector<HTMLInputElement>('.upload-drop-area input[type="file"]');
+    fileInput?.click();
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this._invoiceCreatorService.uploadedFile = Array.from(input.files)[0];
+    }
+  }
+
+  public getUploadedFile() {
+    return this._invoiceCreatorService.uploadedFile;
+  }
+
+  public getUploadedFileAsBase64() {
+    return this.getUploadedFile()?.arrayBuffer().then(buffer => {
+      return btoa(String.fromCharCode(...new Uint8Array(buffer)));
+    });
   }
 }

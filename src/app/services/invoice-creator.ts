@@ -10,6 +10,8 @@ export class InvoiceCreatorService {
 
   private _invoiceItems: InvoiceItem[] = [];
 
+  private _uploadedFile: File | null = null;
+
   public deleteInvoiceItem(id: number): void {
     this._invoiceItems = this._invoiceItems.filter(item => item.id !== id);
   }
@@ -28,5 +30,12 @@ export class InvoiceCreatorService {
 
   public getInvoiceLength(): number {
     return this._invoiceItems.length;
+  }
+
+  public get uploadedFile(): File | null {
+    return this._uploadedFile;
+  }
+  public set uploadedFile(value: File | null) {
+    this._uploadedFile = value;
   }
 }
