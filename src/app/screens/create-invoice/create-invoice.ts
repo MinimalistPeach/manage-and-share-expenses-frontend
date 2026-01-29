@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { InvoiceCreator } from '../../components/invoice-creator/invoice-creator';
+import { InvoiceDetails } from '../../components/invoice-details/invoice-details';
+import { InvoiceImage } from '../../components/invoice-image/invoice-image';
 
 @Component({
   selector: 'app-create-invoice',
   imports: [
-    InvoiceCreator
+    InvoiceDetails,
+    InvoiceImage
   ],
   templateUrl: './create-invoice.html',
   styleUrl: './create-invoice.scss',

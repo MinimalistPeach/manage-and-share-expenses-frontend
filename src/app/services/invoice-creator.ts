@@ -13,7 +13,7 @@ export class InvoiceCreatorService {
   private _uploadedFile: File | null = null;
 
   public deleteInvoiceItem(id: number): void {
-    this._invoiceItems = this._invoiceItems.filter(item => item.id !== id);
+    this._invoiceItems = this._invoiceItems.filter(item => item.id !== id); // TODO: make the IDs shift when deleting
   }
 
 

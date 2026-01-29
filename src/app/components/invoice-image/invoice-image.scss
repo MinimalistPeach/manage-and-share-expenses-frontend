@@ -1,0 +1,20 @@
+.upload-drop-area {
+    border: 2px dashed #1976d2;
+    border-radius: 8px;
+    background: #f5faff;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.upload-drop-area:hover {
+    background: #e3f2fd;
+    border-color: #1565c0;
+}
+
+.upload-drop-area mat-icon {
+    font-size: 48px;
+    color: #1976d2;
+    margin-bottom: 8px;
+}

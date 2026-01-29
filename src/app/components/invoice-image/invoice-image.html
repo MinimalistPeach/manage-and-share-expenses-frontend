@@ -1,0 +1,21 @@
+<h2>Upload Files</h2>
+@if(getUploadedFile() === null) {
+<div class="upload-drop-area" (click)="onDropZoneClick()" (drop)="onFileDropped($event)"
+    (dragover)="$event.preventDefault()">
+    <mat-icon>cloud_upload</mat-icon>
+    <p>Drag & drop files here or click to upload</p>
+    <input #fileInput type="file" hidden (change)="onFileSelected($event)">
+</div>
+}
+@else {
+<div class="uploaded-preview">
+    <div class="preview-header">
+        <button mat-icon-button aria-label="Remove" (click)="removeUploadedFile()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="preview-body">
+        <img [src]="getUploadedPreview()" alt="Uploaded preview" />
+    </div>
+</div>
+}

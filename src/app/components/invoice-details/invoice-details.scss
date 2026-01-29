@@ -1,0 +1,45 @@
+.add-item-label {
+    font-size: 1.5rem !important;
+    font-weight: 400;
+    height: auto !important;
+    width: auto !important;
+}
+
+.item-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    display: flex;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.item-row button[mat-icon-button][aria-label="Delete"] {
+    margin-left: 12px;
+}
+
+#deleteButton {
+    transition: color 0.5s;
+}
+
+#deleteButton:hover {
+    color: red;
+}
+
+#addButton {
+    transition: color 0.5s;
+}
+
+#addButton:hover {
+    color: green;
+}
+
+.scrollable-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
