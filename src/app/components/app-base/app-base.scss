@@ -2,7 +2,7 @@
 	background: #fff;
 	color: #1976d2;
 	border-radius: 50%;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 	margin-right: 8px;
 	transition: background 0.2s, color 0.2s;
 }
@@ -22,7 +22,7 @@
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	background: #1976d2; 
+	background: #1976d2;
 	color: #fff;
 }
 
@@ -41,4 +41,11 @@
 	display: flex;
 	align-items: center;
 	margin-left: auto;
+}
+
+.icon {
+	cursor: pointer;
+	color: white;
+	font-size: 2rem;
+	margin-right: 8px;
 }

@@ -6,11 +6,11 @@
         <span class="toolbar-title">MASE</span>
     </div>
     <div class="toolbar-right">
-        <button mat-icon-button aria-label="Favorite">
-            <mat-icon>favorite</mat-icon>
+        <button mat-icon-button aria-label="Friends" (click)="rightDrawer.open()">
+            <mat-icon class="icon">group</mat-icon>
         </button>
-        <button mat-icon-button aria-label="Share">
-            <mat-icon>share</mat-icon>
+        <button mat-icon-button aria-label="Logout">
+            <mat-icon class="icon">logout</mat-icon>
         </button>
     </div>
 </mat-toolbar>
@@ -25,5 +25,26 @@
     </button>
     }
 </mat-menu>
+
+<mat-drawer-container>
+    <mat-drawer-container class="full-height">
+        <mat-drawer #rightDrawer mode="over" position="end">
+            <div class="drawer-header">
+                <h3>Groups</h3>
+                <button mat-icon-button aria-label="Close drawer" (click)="rightDrawer.close()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <!-- group content goes here -->
+                Right drawer
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            Main content
+        </mat-drawer-content>
+    </mat-drawer-container>
+</mat-drawer-container>
+
 
 <router-outlet></router-outlet>
