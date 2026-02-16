@@ -34,7 +34,7 @@ export class InvoiceDetails {
   openShareDialog() {
     this._dialog.open(ShareDialog as any, {
       data: { friends: this._testFriends },
-      width: '420px'
+      width: '600px',
     });
   }
 

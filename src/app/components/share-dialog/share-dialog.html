@@ -1,8 +1,8 @@
 <div class="share-dialog">
-    <h2>Share with friends</h2>
-    <div class="share-list">
+    <h2 mat-dialog-title>Share with friends</h2>
+    <mat-dialog-content>
         @for(friend of friends;track friend.id) {
-        <div class="share-row">
+        <div>
             <mat-checkbox [checked]="isSelected(friend.id)" (change)="toggle(friend.id, $event.checked)">
                 <img class="friend-avatar" [src]="friend.profilePicture" alt="{{friend.username}}">
                 <div class="friend-info">
@@ -12,8 +12,8 @@
             </mat-checkbox>
         </div>
         }
-    </div>
-    <div class="actions">
+    </mat-dialog-content>
+    <mat-dialog-actions>
         <button mat-raised-button color="primary" (click)="done()">Done</button>
-    </div>
+    </mat-dialog-actions>
 </div>
