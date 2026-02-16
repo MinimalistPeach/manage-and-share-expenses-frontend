@@ -6,6 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogActions, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
 import { Friend } from '../../models/friend';
+import { MatFormField, MatInputModule } from '@angular/material/input';
 
 @Component({
     selector: 'app-share-dialog',
@@ -17,7 +18,9 @@ import { Friend } from '../../models/friend';
         MatIconModule,
         MatDialogActions,
         MatDialogContent,
-        MatDialogTitle],
+        MatDialogTitle,
+        MatInputModule,
+        MatFormField],
     templateUrl: './share-dialog.html',
     styleUrls: ['./share-dialog.scss']
 })
