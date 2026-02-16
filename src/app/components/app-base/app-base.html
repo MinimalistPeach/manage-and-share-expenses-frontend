@@ -27,24 +27,36 @@
 </mat-menu>
 
 <mat-drawer-container>
-    <mat-drawer-container class="full-height">
-        <mat-drawer #rightDrawer mode="over" position="end">
-            <div class="drawer-header">
-                <h3>Groups</h3>
-                <button mat-icon-button aria-label="Close drawer" (click)="rightDrawer.close()">
-                    <mat-icon>close</mat-icon>
+    <mat-drawer #rightDrawer mode="over" position="end">
+        <div class="drawer-header">
+            <h3>Friends <mat-icon>group</mat-icon></h3>
+            <button mat-icon-button aria-label="Close drawer" (click)="rightDrawer.close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div class="drawer-body">
+            <div class="drawer-actions">
+                <button mat-icon-button aria-label="AddFriend" id="addfriend" matTooltip="Add a friend"
+                    matTooltipPosition="right">
+                    <mat-icon>group_add</mat-icon>
                 </button>
             </div>
-            <div class="drawer-body">
-                <!-- group content goes here -->
-                Right drawer
+            <div class="scrollable-container">
+                @for(friend of testFriends; track friend.id) {
+                <div class="item-row">
+                    <div class="friend-item">
+                        <img [src]="friend.profilePicture" alt="{{friend.username}}" class="friend-avatar">
+                        <div class="friend-info">
+                            <span class="friend-name">{{friend.name}}</span>
+                            <span class="friend-tag">{{friend.username}}</span>
+                        </div>
+                    </div>
+                </div>
+                }
             </div>
-        </mat-drawer>
-        <mat-drawer-content>
-            Main content
-        </mat-drawer-content>
-    </mat-drawer-container>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
 </mat-drawer-container>
-
-
-<router-outlet></router-outlet>

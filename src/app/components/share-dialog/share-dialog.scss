@@ -1,0 +1,33 @@
+.share-list {
+  max-height: 360px;
+  overflow: auto;
+}
+
+.friend-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.friend-info {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.friend-name {
+  font-weight: 600;
+}
+
+.friend-tag {
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.6);
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}

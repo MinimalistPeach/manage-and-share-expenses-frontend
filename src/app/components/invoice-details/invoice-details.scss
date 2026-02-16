@@ -5,18 +5,15 @@
     width: auto !important;
 }
 
-.item-row {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
 .input-field {
     display: flex;
     width: auto;
     margin-bottom: 0;
+}
+
+.items-container {
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .item-row button[mat-icon-button][aria-label="Delete"] {
@@ -39,10 +36,6 @@
     color: green;
 }
 
-.scrollable-container {
-    max-height: 300px;
-    overflow-y: auto;
-}
 
 .buttons {
     display: flex;

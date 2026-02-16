@@ -1,14 +1,12 @@
 @use '@angular/material' as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$cyan-palette,
-      tertiary: mat.$orange-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$cyan-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
 }
 
 body {
@@ -27,12 +25,34 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
+
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .mat-icon {
-    height: auto !important;
-    width: auto !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.scrollable-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 5px;
 }
