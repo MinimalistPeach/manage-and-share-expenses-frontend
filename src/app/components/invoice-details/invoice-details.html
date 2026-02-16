@@ -36,11 +36,11 @@
             </mat-form-field>
             <mat-form-field appearance="fill" class="input-field">
                 <mat-label>Item #{{invoiceItem.id}} price</mat-label>
-                <input matInput type="number" placeholder="Enter item price">
+                <input matInput type="number" min="1" placeholder="Enter item price">
             </mat-form-field>
             <mat-form-field appearance="fill" class="input-field">
                 <mat-label>Item #{{invoiceItem.id}} quantity</mat-label>
-                <input matInput type="number" placeholder="Enter item quantity">
+                <input matInput type="number" min="1" placeholder="Enter item quantity">
             </mat-form-field>
             <button mat-icon-button aria-label="Delete" id="deleteButton" (click)="deleteInvoiceItem(invoiceItem.id)">
                 <mat-icon>delete</mat-icon>
@@ -48,6 +48,15 @@
         </div>
         }
     </div>
-
-
 </mat-expansion-panel>
+
+<div class="buttons">
+    <button mat-raised-button color="primary" aria-label="Save">
+        <mat-icon class="add-item-label">save</mat-icon>
+        <mat-label class="add-item-label">Save</mat-label>
+    </button>
+    <button mat-raised-button color="primary" aria-label="Save">
+        <mat-icon class="add-item-label">emoji_people</mat-icon>
+        <mat-label class="add-item-label">Share with a friend</mat-label>
+    </button>
+</div>

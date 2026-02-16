@@ -43,3 +43,9 @@
     max-height: 300px;
     overflow-y: auto;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
